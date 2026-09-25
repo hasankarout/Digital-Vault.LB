@@ -1,0 +1,298 @@
+:root {
+--bg-color: #07090e;
+--card-bg: rgba(15, 18, 28, 0.88);
+--neon-cyan: #00f3ff;
+--neon-purple: #b026ff;
+--neon-gold: #ffaa00;
+--neon-green: #00ff66;
+--neon-red: #ff0055;
+--text-main: #ffffff;
+--text-sub: #9ea4c1;
+--font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+-webkit-tap-highlight-color: transparent;
+}
+
+body {
+background-color: var(--bg-color);
+color: var(--text-main);
+font-family: var(--font-family);
+min-height: 100vh;
+overflow-x: hidden;
+position: relative;
+padding-bottom: 25px;
+}
+
+/* Background Joystick Pattern Glow */
+.joystick-bg {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -1;
+opacity: 0.05;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%2300f3ff'%3E%3Cpath d='M20 15l-5 5h10l-5-5zm-5 10l5 5 5-5h-10zm25 25a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm20-5l-5-5v10l5-5zm-30 0l-5-5v10l5-5zm35-20a5 5 0 1 0 0-10 5 5 0 0 0 0 10zM15 55a5 5 0 1 0 0-10 5 5 0 0 0 0 10z'/%3E%3C/g%3E%3C/svg%3E");
+pointer-events: none;
+}
+
+.app-container {
+width: 100%;
+max-width: 480px;
+margin: 0 auto;
+padding: 15px;
+}
+
+/* Header & Logo */
+.main-header {
+text-align: center;
+margin-bottom: 20px;
+}
+
+.logo-wrapper {
+margin-bottom: 8px;
+}
+
+.logo-img {
+max-width: 180px;
+height: auto;
+filter: drop-shadow(0 0 12px rgba(0, 243, 255, 0.6));
+}
+
+.brand-title {
+font-size: 2rem;
+font-weight: 900;
+color: var(--neon-cyan);
+text-shadow: 0 0 12px var(--neon-cyan);
+}
+
+.highlight-purple {
+color: var(--neon-purple);
+text-shadow: 0 0 12px var(--neon-purple);
+}
+
+.bio-text {
+font-size: 0.85rem;
+color: var(--text-sub);
+line-height: 1.5;
+}
+
+/* Navigation */
+.category-nav {
+display: flex;
+gap: 8px;
+overflow-x: auto;
+padding-bottom: 10px;
+margin-bottom: 15px;
+scrollbar-width: none;
+}
+
+.category-nav::-webkit-scrollbar { display: none; }
+
+.nav-btn {
+flex: 0 0 auto;
+background: var(--card-bg);
+border: 1px solid rgba(255, 255, 255, 0.1);
+color: var(--text-sub);
+padding: 10px 14px;
+border-radius: 12px;
+font-size: 0.82rem;
+cursor: pointer;
+display: flex;
+align-items: center;
+gap: 6px;
+transition: all 0.2s ease;
+}
+
+.nav-btn.active {
+background: rgba(0, 243, 255, 0.15);
+color: var(--neon-cyan);
+border-color: var(--neon-cyan);
+box-shadow: 0 0 12px rgba(0, 243, 255, 0.3);
+}
+
+/* Tab Contents */
+.tab-content { display: none; }
+.tab-content.active { display: block; animation: fadeIn 0.25s ease-in-out; }
+
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(5px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+/* Card Styling */
+.section-card {
+background: var(--card-bg);
+border-radius: 16px;
+padding: 16px;
+margin-bottom: 18px;
+backdrop-filter: blur(12px);
+border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.neon-border-blue { border-color: rgba(0, 243, 255, 0.4); box-shadow: 0 0 15px rgba(0, 243, 255, 0.15); }
+.neon-border-purple { border-color: rgba(176, 38, 255, 0.4); box-shadow: 0 0 15px rgba(176, 38, 255, 0.15); }
+.neon-border-gold { border-color: rgba(255, 170, 0, 0.4); box-shadow: 0 0 15px rgba(255, 170, 0, 0.15); }
+.neon-border-red { border-color: rgba(255, 0, 85, 0.4); box-shadow: 0 0 15px rgba(255, 0, 85, 0.15); }
+.neon-border-green { border-color: rgba(0, 255, 102, 0.4); box-shadow: 0 0 15px rgba(0, 255, 102, 0.15); }
+
+.card-header {
+display: flex;
+align-items: center;
+gap: 10px;
+margin-bottom: 10px;
+}
+
+.card-icon { font-size: 1.2rem; }
+.text-cyan { color: var(--neon-cyan); }
+.text-purple { color: var(--neon-purple); }
+.text-gold { color: var(--neon-gold); }
+.text-red { color: var(--neon-red); }
+.text-green { color: var(--neon-green); }
+
+.card-desc { font-size: 0.82rem; color: var(--text-sub); margin-bottom: 10px; }
+
+.price-tag { font-size: 0.9rem; margin-bottom: 12px; }
+.price-highlight { color: var(--neon-green); font-weight: bold; font-size: 1.1rem; }
+
+/* Portfolio */
+.portfolio-links { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.portfolio-links h4 { font-size: 0.8rem; color: var(--text-sub); }
+.portfolio-btn {
+background: rgba(255, 255, 255, 0.04);
+color: var(--neon-cyan);
+text-decoration: none;
+padding: 8px 10px;
+border-radius: 8px;
+font-size: 0.8rem;
+border: 1px dashed rgba(0, 243, 255, 0.3);
+}
+
+/* Streaming Cards */
+.sub-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.stream-card {
+background: rgba(0, 0, 0, 0.4);
+border-radius: 12px;
+padding: 12px;
+border: 1px solid rgba(255, 255, 255, 0.06);
+text-align: center;
+}
+
+.stream-header { display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 6px; }
+.stream-logo { font-size: 1.3rem; }
+.stream-card h3 { font-size: 0.88rem; }
+.stream-info { font-size: 0.75rem; color: var(--text-sub); margin-bottom: 8px; }
+.stream-price-box { font-size: 0.78rem; margin-bottom: 8px; background: rgba(255,255,255,0.05); padding: 4px; border-radius: 6px; }
+.price-val { color: var(--neon-green); }
+
+/* PUBG Cards */
+.grid-2x2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.price-card {
+background: rgba(0, 0, 0, 0.3);
+padding: 8px 10px;
+border-radius: 10px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border: 1px solid rgba(255, 170, 0, 0.25);
+}
+
+.uc-info { display: flex; flex-direction: column; }
+.uc-amount { font-weight: bold; font-size: 0.85rem; color: var(--neon-gold); }
+.item-price { font-size: 0.75rem; color: var(--neon-green); }
+
+.buy-sm-btn {
+background: var(--neon-gold);
+color: #000;
+border: none;
+padding: 5px 10px;
+border-radius: 6px;
+font-weight: bold;
+font-size: 0.75rem;
+}
+
+/* Gift Cards Accordion */
+.gift-catalog { display: flex; flex-direction: column; gap: 8px; }
+.catalog-item { background: rgba(0,0,0,0.3); border-radius: 8px; border: 1px solid rgba(255,255,255,0.06); }
+.catalog-header { padding: 10px; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; cursor: pointer; }
+.catalog-body { display: none; padding: 10px; border-top: 1px solid rgba(255,255,255,0.05); flex-direction: column; gap: 8px; }
+.catalog-body.open { display: flex; }
+.catalog-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; }
+.catalog-row strong { color: var(--neon-green); }
+.catalog-row button { background: var(--neon-cyan); color: #000; border: none; padding: 3px 8px; border-radius: 4px; font-weight: bold; font-size: 0.7rem; }
+
+/* Telecom */
+.telecom-container { display: flex; flex-direction: column; gap: 12px; }
+.telecom-box { background: rgba(0,0,0,0.3); padding: 12px; border-radius: 10px; }
+.alfa-box { border-right: 3px solid #ff4500; }
+.mtc-box { border-right: 3px solid #00aaff; }
+.alfa-title { color: #ff4500; font-size: 0.95rem; margin-bottom: 8px; }
+.mtc-title { color: #00aaff; font-size: 0.95rem; margin-bottom: 8px; }
+
+.plans-wrapper { display: flex; flex-direction: column; gap: 8px; }
+.plan-item { display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; background: rgba(255,255,255,0.03); padding: 6px 8px; border-radius: 6px; }
+.plan-item strong { color: var(--neon-green); }
+.plan-item button { background: rgba(255,255,255,0.15); color: #fff; border: none; padding: 3px 8px; border-radius: 4px; font-size: 0.7rem; }
+
+/* Minecraft */
+.mc-grid { display: flex; flex-direction: column; gap: 10px; }
+.mc-card { background: rgba(0,0,0,0.3); border: 1px solid rgba(0,255,102,0.3); padding: 12px; border-radius: 10px; position: relative; }
+.mc-card.popular { border-color: var(--neon-gold); }
+.mc-badge { position: absolute; top: 8px; left: 8px; background: var(--neon-green); color: #000; font-size: 0.65rem; padding: 2px 6px; border-radius: 8px; font-weight: bold; }
+.mc-price { font-size: 0.9rem; font-weight: bold; color: var(--neon-green); margin: 6px 0; }
+
+/* Buttons & Footer */
+.order-btn {
+width: 100%;
+background: #25d366;
+color: #fff;
+border: none;
+padding: 10px;
+border-radius: 10px;
+font-weight: bold;
+font-size: 0.88rem;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+}
+
+.order-btn-sm { width: 100%; border: none; padding: 7px; border-radius: 6px; font-weight: bold; font-size: 0.78rem; }
+.btn-red { background: var(--neon-red); color: #fff; }
+.btn-purple { background: var(--neon-purple); color: #fff; }
+.btn-green { background: var(--neon-green); color: #000; }
+.btn-gold { background: var(--neon-gold); color: #000; }
+
+.main-footer { text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.05); }
+.social-links { display: flex; justify-content: center; gap: 12px; margin-bottom: 8px; }
+.social-icon { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none; font-size: 1rem; border: 1px solid rgba(255,255,255,0.1); }
+.copyright { font-size: 0.72rem; color: var(--text-sub); }
+
+/* Logo Images for Streaming Services */
+.brand-logo-img {
+width: 24px;
+height: 24px;
+object-fit: contain;
+filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.2));
+}
+
+/* PUBG Logo Style */
+.pubg-logo-img {
+width: 28px;
+height: 28px;
+object-fit: contain;
+filter: drop-shadow(0 0 6px rgba(255, 170, 0, 0.6));
+}
+
+/* Minecraft Logo Style */
+.mc-logo-img {
+width: 28px;
+height: 28px;
+object-fit: contain;
+filter: drop-shadow(0 0 6px rgba(0, 255, 102, 0.6));
+}

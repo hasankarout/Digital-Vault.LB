@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Digital Vault | ديجيتال فولت</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div class="joystick-bg"></div>
+
+<div class="app-container">
+<!-- Header & Logo -->
+<header class="main-header">
+<div class="logo-wrapper">
+<img src="logo.png" alt="Digital Vault Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('alt-logo').style.display='block';">
+<div id="alt-logo" class="brand-title" style="display:none;">
+DIGITAL<span class="highlight-purple">VAULT</span>
+</div>
+</div>
+<p class="bio-text">
+بوابتك الأولى للخدمات الرقمية المتكاملة، حلول البرمجة والمواقع، تشريجات الألعاب والبطاقات بأفضل الأسعار.
+</p>
+</header>
+
+<!-- Navigation Tabs -->
+<nav class="category-nav">
+<button class="nav-btn active" onclick="switchTab('services', this)"><i class="fa-solid fa-code"></i> البرمجة والاشتراكات</button>
+<button class="nav-btn" onclick="switchTab('topups', this)"><i class="fa-solid fa-gamepad"></i> التشريجات والبطاقات</button>
+<button class="nav-btn" onclick="switchTab('telecom', this)"><i class="fa-solid fa-mobile-screen-button"></i> Alfa & MTC</button>
+<button class="nav-btn" onclick="switchTab('minecraft', this)"><i class="fa-solid fa-cubes"></i> سيرفرات ماينكرافت</button>
+</nav>
+
+<!-- TAB 1: Web Design & Streaming -->
+<section id="tab-services" class="tab-content active">
+<!-- Web Design Section -->
+<div class="section-card neon-border-blue">
+<div class="card-header">
+<i class="fa-solid fa-laptop-code card-icon text-cyan"></i>
+<h2>تصميم وبرمجة المواقع</h2>
+</div>
+<p class="card-desc">نوفر لك مواقع إلكترونية احترافية ومتجاوبة مع الموبايل وسريعة للغاية.</p>
+<div class="price-tag">تبدأ من <span class="price-highlight">$25</span></div>
+
+<div class="portfolio-links">
+<h4>معرض أعمالنا:</h4>
+<a href="https://hasankarout.github.io/CareWithMe-store/" target="_blank" class="portfolio-btn"><i class="fa-solid fa-globe"></i> متجر CareWithMe</a>
+<a href="https://hasankarout.github.io/Fadi.Ibrahim/" target="_blank" class="portfolio-btn"><i class="fa-solid fa-globe"></i>Coach Fadi Web</a>
+</div>
+
+<button class="order-btn btn-glow-blue" onclick="orderWhatsApp('استفسار عن تصميم موقع جديد')">
+<i class="fa-brands fa-whatsapp"></i> اطلب موقعك الآن
+</button>
+</div>
+
+<!-- Movies & Series Subscriptions -->
+<div class="section-card neon-border-purple">
+<div class="card-header">
+<i class="fa-solid fa-tv card-icon text-purple"></i>
+<h2>اشتراكات الأفلام والمسلسلات</h2>
+</div>
+
+<div class="sub-grid">
+<!-- Netflix Card -->
+<div class="stream-card">
+<div class="stream-header">
+<!-- لوغو نتفلكس الرسمي -->
+<img src="netfix.jpg" alt="Netflix Logo" class="brand-logo-img">
+<h3>NETFLIX</h3>
+</div>
+<p class="stream-info">حسابات ودقة عالية 4K</p>
+<div class="stream-price-box">
+<span>اشتراك يوزر: <strong class="price-val">$3.5</strong></span>
+</div>
+<button class="order-btn-sm btn-red" onclick="orderWhatsApp('طلب اشتراك نيتفلكس - يوزر')">طلب الآن</button>
+</div>
+
+<!-- Shahid Card -->
+<div class="stream-card">
+<div class="stream-header">
+<!-- لوغو شاهد VIP الرسمي -->
+<img src="shahid.png" alt="Shahid VIP Logo" class="brand-logo-img">
+<h3>SHAHID VIP</h3>
+</div>
+<p class="stream-info">شاهد VIP + الرياضية</p>
+<div class="stream-price-box">
+<span>اشتراك يوزر: <strong class="price-val">$3.0</strong></span>
+</div>
+<button class="order-btn-sm btn-purple" onclick="orderWhatsApp('طلب اشتراك شاهد VIP')">طلب الآن</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TAB 2: Topups & Gift Cards -->
+<section id="tab-topups" class="tab-content">
+<!-- PUBG Mobile -->
+<div class="section-card neon-border-gold">
+<div class="card-header">
+<!-- لوغو ببجي بديل الأيقونة القديمة -->
+<img src="pubg.jpg" alt="PUBG Mobile Logo" class="pubg-logo-img" onerror="this.style.display='none'; document.getElementById('pubg-fallback-icon').style.display='inline-block';">
+<i id="pubg-fallback-icon" class="fa-solid fa-crosshairs card-icon text-gold" style="display:none;"></i>
+<h2>تشريجات PUBG Mobile</h2>
+</div>
+<div class="grid-2x2">
+<div class="price-card">
+<div class="uc-info">
+<span class="uc-amount">60 UC</span>
+<span class="item-price">$1.5</span>
+</div>
+<button class="buy-sm-btn" onclick="orderWhatsApp('شحن ببجي 60 UC بسعر $1.5')">شحن</button>
+</div>
+<div class="price-card">
+<div class="uc-info">
+<span class="uc-amount">325 UC</span>
+<span class="item-price">$6.0</span>
+</div>
+<button class="buy-sm-btn" onclick="orderWhatsApp('شحن ببجي 325 UC بسعر $6.0')">شحن</button>
+</div>
+<div class="price-card">
+<div class="uc-info">
+<span class="uc-amount">660 UC</span>
+<span class="item-price">$12.0</span>
+</div>
+<button class="buy-sm-btn" onclick="orderWhatsApp('شحن ببجي 660 UC بسعر $12.0')">شحن</button>
+</div>
+<div class="price-card">
+<div class="uc-info">
+<span class="uc-amount">1800 UC</span>
+<span class="item-price">$24.0</span>
+</div>
+<button class="buy-sm-btn" onclick="orderWhatsApp('شحن ببجي 1800 UC بسعر $24.0')">شحن</button>
+</div>
+</div>
+</div>
+
+<!-- Gift Cards Catalog -->
+<div class="section-card neon-border-blue">
+<div class="card-header">
+<i class="fa-solid fa-gift card-icon text-cyan"></i>
+<h2>كتالوج بطاقات الشحن</h2>
+</div>
+
+<div class="gift-catalog">
+<!-- iTunes -->
+<div class="catalog-item">
+<div class="catalog-header" onclick="toggleCatalog('itunes-list')">
+<span><i class="fa-brands fa-apple"></i> بطاقات iTunes</span>
+<i class="fa-solid fa-chevron-down drop-icon"></i>
+</div>
+<div id="itunes-list" class="catalog-body">
+<div class="catalog-row"><span>بطاقة $5</span> <strong>$6.0</strong> <button onclick="orderWhatsApp('طلب بطاقة iTunes $5')">طلب</button></div>
+<div class="catalog-row"><span>بطاقة $10</span> <strong>$11.5</strong> <button onclick="orderWhatsApp('طلب بطاقة iTunes $10')">طلب</button></div>
+<div class="catalog-row"><span>بطاقة $25</span> <strong>$27.5</strong> <button onclick="orderWhatsApp('طلب بطاقة iTunes $25')">طلب</button></div>
+</div>
+</div>
+
+<!-- PSN -->
+<div class="catalog-item">
+<div class="catalog-header" onclick="toggleCatalog('psn-list')">
+<span><i class="fa-brands fa-playstation"></i> بطاقات PlayStation</span>
+<i class="fa-solid fa-chevron-down drop-icon"></i>
+</div>
+<div id="psn-list" class="catalog-body">
+<div class="catalog-row"><span>بطاقة $10</span> <strong>$11.0</strong> <button onclick="orderWhatsApp('طلب بطاقة PSN $10')">طلب</button></div>
+<div class="catalog-row"><span>بطاقة $20</span> <strong>$21.5</strong> <button onclick="orderWhatsApp('طلب بطاقة PSN $20')">طلب</button></div>
+<div class="catalog-row"><span>بطاقة $50</span> <strong>$53.5</strong> <button onclick="orderWhatsApp('طلب بطاقة PSN $50')">طلب</button></div>
+</div>
+</div>
+
+<!-- Steam -->
+<div class="catalog-item">
+<div class="catalog-header" onclick="toggleCatalog('steam-list')">
+<span><i class="fa-brands fa-steam"></i> بطاقات Steam</span>
+<i class="fa-solid fa-chevron-down drop-icon"></i>
+</div>
+<div id="steam-list" class="catalog-body">
+<div class="catalog-row"><span>بطاقة $5</span> <strong>$6.0</strong> <button onclick="orderWhatsApp('طلب بطاقة Steam $5')">طلب</button></div>
+<div class="catalog-row"><span>بطاقة $10</span> <strong>$11.5</strong> <button onclick="orderWhatsApp('طلب بطاقة Steam $10')">طلب</button></div>
+<div class="catalog-row"><span>بطاقة $20</span> <strong>$22.5</strong> <button onclick="orderWhatsApp('طلب بطاقة Steam $20')">طلب</button></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TAB 3: Telecom (Alfa & MTC Touch) -->
+<section id="tab-telecom" class="tab-content">
+<div class="section-card neon-border-red">
+<div class="card-header">
+<i class="fa-solid fa-tower-cell card-icon text-red"></i>
+<h2>تعبئة خطوط Alfa & MTC Touch</h2>
+</div>
+
+<div class="telecom-container">
+<!-- Alfa Box -->
+<div class="telecom-box alfa-box">
+<h3 class="alfa-title"><i class="fa-solid fa-signal"></i> باقات ALFA</h3>
+<div class="plans-wrapper">
+<div class="plan-item">
+<span>Vaucher 3.03$</span>
+<strong>$4.50</strong>
+<button onclick="orderWhatsApp('Vaucher 3.03$')">طلب</button>
+</div>
+<div class="plan-item">
+<span>Voucher 4.50$</span>
+<strong>$6.00</strong>
+<button onclick="orderWhatsApp('Vaucher 4.50$')">طلب</button>
+</div>
+<div class="plan-item">
+<span>Vaucher 7.58$</span>
+<strong>$10.00</strong>
+<button onclick="orderWhatsApp('Vaucher 7.58$')">طلب</button>
+</div>
+</div>
+</div>
+
+<!-- MTC Touch Box -->
+<div class="telecom-box mtc-box">
+<h3 class="mtc-title"><i class="fa-solid fa-wifi"></i> باقات MTC TOUCH</h3>
+<div class="plans-wrapper">
+<div class="plan-item">
+<span> 1.67$ دولارات بدون ايام</span>
+<strong>$2.5 </strong>
+<button onclick="orderWhatsApp('طلب تشريج MTC دولارات بسعر$2.5')">طلب</button>
+</div>
+<div class="plan-item">
+<span>كرت تشريج / دولارات $4.50</span>
+<strong>$6.00</strong>
+<button onclick="orderWhatsApp('طلب باقة واتساب وداتا MTC 6.00$ بسعر')">طلب</button>
+</div>
+<div class="plan-item">
+<span>كرت تشريج / دولارات $7.58</span>
+<strong>$10.00</strong>
+<button onclick="orderWhatsApp('طلب تجديد صلاحية خط MTC بسعر $10.00')">طلب</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TAB 4: Minecraft Servers -->
+<section id="tab-minecraft" class="tab-content">
+<div class="section-card neon-border-green">
+<div class="card-header">
+<!-- لوغو ماينكرافت -->
+<img src="mine.jpg" alt="Minecraft Logo" class="mc-logo-img" onerror="this.style.display='none'; document.getElementById('mc-fallback-icon').style.display='inline-block';">
+<i id="mc-fallback-icon" class="fa-solid fa-cubes card-icon text-green" style="display:none;"></i>
+<h2>سيرفرات ماينكرافت الدائمة</h2>
+</div>
+<p class="card-desc">سيرفر أونلاين 24/7 بدون لاغ مع حماية ممتازة.</p>
+
+<div class="mc-grid">
+<!-- 5 Users -->
+<div class="mc-card">
+<div class="mc-badge">خفيف</div>
+<h3>5 Users</h3>
+<p class="mc-specs">سيرفر خاص للأصدقاء</p>
+<div class="mc-price">$5 / شهرياً</div>
+<button class="order-btn-sm btn-green" onclick="orderWhatsApp('طلب سيرفر ماينكرافت 5 مستخدمين - $5')">حجز السيرفر</button>
+</div>
+
+<!-- 10 Users -->
+<div class="mc-card popular">
+<div class="mc-badge text-black">الأكثر طلباً</div>
+<h3>10 Users</h3>
+<p class="mc-specs">سيرفر خاص للأصدقاء</p>
+<div class="mc-price">$10 / شهرياً</div>
+<button class="order-btn-sm btn-gold" onclick="orderWhatsApp('طلب سيرفر ماينكرافت 10 مستخدمين -$10')">حجز السيرفر</button>
+</div>
+
+<!-- 15 Users -->
+<div class="mc-card">
+<div class="mc-badge">احترافي</div>
+<h3>15 Users</h3>
+<p class="mc-specs">سيرفر خاص للأصدقاء</p>
+<div class="mc-price">$15 / شهرياً</div>
+<button class="order-btn-sm btn-green" onclick="orderWhatsApp('طلب سيرفر ماينكرافت 15 مستخدم - $15')">حجز السيرفر</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer & Social Links -->
+<footer class="main-footer">
+<div class="social-links">
+<a href="https://www.instagram.com/digitalvault.lb/?hl=en#" target="_blank" class="social-icon insta"><i class="fa-brands fa-instagram"></i></a>
+<a href="https://www.tiktok.com/@digitalvault.hkx?is_from_webapp=1&sender_device=pc" target="_blank" class="social-icon tiktok"><i class="fa-brands fa-tiktok"></i></a>
+<a href="https://wa.me/96178744519" target="_blank" class="social-icon wa"><i class="fa-brands fa-whatsapp"></i></a>
+</div>
+<p class="copyright">جميع الحقوق محفوظة © <span id="year"></span> <strong>Digital Vault</strong></p>
+</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
